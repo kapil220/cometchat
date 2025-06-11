@@ -1,31 +1,83 @@
 <section class="customers">
   <div class="container">
     <div class="customers-content">
-      
-      <div class="logos-grid">
-        <div class="logo-item">
-          <img src="/logos/aws.svg" alt="AWS" class="logo" />
+      <!-- Desktop Grid (original unchanged) -->
+      <div class="desktop-logos">
+        <div class="logos-grid">
+          <div class="logo-item">
+            <img src="/aws.png" alt="AWS" class="logo" />
+          </div>
+          <div class="logo-item">
+            <img src="/10x.png" alt="10x Genomics" class="logo" />
+          </div>
+          <div class="logo-item">
+            <img src="/microsoft.png" alt="Microsoft" class="logo" />
+          </div>
+          <div class="logo-item">
+            <img src="/path2.png" alt="NASSCOM" class="logo" />
+          </div>
+          <div class="logo-item">
+            <img src="/Logo.png" alt="Techstars" class="logo" />
+          </div>
+          <div class="logo-item">
+            <img src="/Teknopoint.png" alt="Tekno Point" class="logo" />
+          </div>
+          <div class="logo-item">
+            <img src="/cisco.png" alt="Cisco" class="logo" />
+          </div>
+          <div class="logo-item">
+            <img src="/tsc.png" alt="Tekno Point" class="logo" />
+          </div>
+          <div class="logo-item">
+            <img src="/hak.png" alt="Cisco" class="logo" />
+          </div>
         </div>
-        <div class="logo-item">
-          <img src="/logos/10x-genomics.svg" alt="10x Genomics" class="logo" />
-        </div>
-        <div class="logo-item">
-          <img src="/logos/microsoft.svg" alt="Microsoft" class="logo" />
-        </div>
-        <div class="logo-item">
-          <img src="/logos/nasscom.svg" alt="NASSCOM" class="logo" />
-        </div>
-        <div class="logo-item">
-          <img src="/logos/techstars.svg" alt="Techstars" class="logo" />
-        </div>
-        <div class="logo-item">
-          <img src="/logos/tekno-point.svg" alt="Tekno Point" class="logo" />
-        </div>
-        <div class="logo-item">
-          <img src="/logos/cisco.svg" alt="Cisco" class="logo" />
-        </div>
-        <div class="logo-item">
-          <div class="logo-placeholder">+50</div>
+      </div>
+
+      <!-- Mobile Carousel (hidden on desktop) -->
+      <div class="mobile-logos">
+        <div class="logos-track">
+          <!-- Original Logos + Duplicates -->
+          <div class="logo-item">
+            <img src="/aws.png" alt="AWS" class="logo" />
+          </div>
+          <div class="logo-item">
+            <img src="/10x.png" alt="10x Genomics" class="logo" />
+          </div>
+          <div class="logo-item">
+            <img src="/microsoft.png" alt="Microsoft" class="logo" />
+          </div>
+          <div class="logo-item">
+            <img src="/path2.png" alt="NASSCOM" class="logo" />
+          </div>
+          <div class="logo-item">
+            <img src="/Logo.png" alt="Techstars" class="logo" />
+          </div>
+          <div class="logo-item">
+            <img src="/Teknopoint.png" alt="Tekno Point" class="logo" />
+          </div>
+          <div class="logo-item">
+            <img src="/cisco.png" alt="Cisco" class="logo" />
+          </div>
+          <div class="logo-item">
+            <img src="/tsc.png" alt="Tekno Point" class="logo" />
+          </div>
+          <div class="logo-item">
+            <img src="/hak.png" alt="Cisco" class="logo" />
+          </div>
+          <!-- Duplicates for seamless looping -->
+          <div class="logo-item">
+            <img src="/aws.png" alt="AWS" class="logo" />
+          </div>
+          <div class="logo-item">
+            <img src="/10x.png" alt="10x Genomics" class="logo" />
+          </div>
+          <div class="logo-item">
+            <img src="/microsoft.png" alt="Microsoft" class="logo" />
+          </div>
+          <div class="logo-item">
+            <img src="/path2.png" alt="NASSCOM" class="logo" />
+          </div>
         </div>
       </div>
     </div>
@@ -33,6 +85,7 @@
 </section>
 
 <style>
+  /* Original Desktop Styles (UNCHANGED) */
   .customers {
     min-height: 18vh;
     background: rgba(10, 9, 20, 1);
@@ -45,23 +98,27 @@
 
   .container {
     width: 100%;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 2rem;
   }
 
   .customers-content {
     text-align: center;
+    width: 100%;
   }
 
-
+  .desktop-logos {
+    display: block;
+  }
 
   .logos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16px, 1fr));
-    gap: 3rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    justify-items: center;
-    max-width: 1200px;
+    gap: 72px;
+    width: 100%;
     margin: 0 auto;
   }
 
@@ -69,7 +126,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 60px;
     opacity: 0.6;
     transition: all 0.3s ease;
     filter: grayscale(100%) brightness(0) invert(1);
@@ -81,86 +137,67 @@
   }
 
   .logo {
-    max-height: 40px;
-    max-width: 140px;
-    width: auto;
     height: auto;
+    max-height: 32px;
+    width: auto;
+    max-width: 140px;
     object-fit: contain;
   }
 
-  .logo-placeholder {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    padding: 1rem 1.5rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1rem;
-    text-align: center;
-    min-width: 80px;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+  /* Mobile Carousel (NEW) */
+  .mobile-logos {
+    display: none;
+    width: 100%; 
+    margin: 0 auto;
+    
   }
 
-  .logo-placeholder:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
+  .logos-track {
+    display: flex;
+    gap: 32px;
+    animation: scroll 20s linear infinite;
+    will-change: transform;
+    padding: 10px 0;
   }
 
-  /* Responsive design */
+  /* Mobile Styles */
   @media (max-width: 768px) {
+    .desktop-logos {
+      display: none;
+    }
+    
+    .mobile-logos {
+      display: block;
+    }
+    
     .customers {
-      padding: 3rem 0;
-      min-height: 20vh;
+      padding: 2rem 0;
+      min-height: 16vh;
     }
-
-    .customers-content h2 {
-      font-size: 2rem;
-    }
-
-    .customers-content p {
-      font-size: 1.1rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .logos-grid {
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 2rem 1.5rem;
-    }
-
-    .logo-item {
-      height: 50px;
-    }
-
-    .logo {
-      max-height: 32px;
-      max-width: 110px;
-    }
-
+    
     .container {
       padding: 0 1rem;
+    }
+    
+    .logo {
+      max-height: 24px;
+      max-width: 100px;
     }
   }
 
   @media (max-width: 480px) {
-    .customers-content h2 {
-      font-size: 1.7rem;
+    .logos-track {
+      gap: 24px;
     }
-
-    .logos-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem 1rem;
-    }
-
+    
     .logo {
-      max-height: 28px;
-      max-width: 100px;
+      max-height: 20px;
+      max-width: 80px;
     }
+  }
 
-    .logo-placeholder {
-      padding: 0.8rem 1rem;
-      font-size: 0.9rem;
-    }
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 16px)); }
   }
 </style>

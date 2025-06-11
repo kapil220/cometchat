@@ -19,19 +19,19 @@
     </div>
     
     <nav class="nav">
-      <a href="/products" class="nav-link">Products</a>
-      <a href="/solutions" class="nav-link">Solutions</a>
-      <a href="/pricing" class="nav-link">Pricing</a>
-      <a href="/partners" class="nav-link active">Partners</a>
-      <a href="/resources" class="nav-link">Resources</a>
+      <a href="/" class="nav-link">Platform</a>
+      <a href="/" class="nav-link">Solutions</a>
+      <a href="/" class="nav-link">Developers</a>
+      <a href="/" class="nav-link active">Resources</a>
+      <a href="/" class="nav-link">Pricing</a>
     </nav>
     
     <div class="header-actions">
       <button class="btn btn-outline" on:click={handleContactSales}>
-        Contact sales
+        Login
       </button>
       <button class="btn btn-primary" on:click={handleSignUp}>
-        Sign up free
+        Schedule a demo
       </button>
     </div>
     
@@ -59,7 +59,7 @@
 
   .header-container {
     width: 100%;
-    max-width: 1200px;
+  
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
@@ -77,7 +77,9 @@
   .nav {
     display: flex;
     gap: 2rem;
-    margin: 0 2rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .nav-link {
@@ -91,6 +93,7 @@
 
   .nav-link:hover {
     color: white;
+    
   }
 
   .nav-link.active {
@@ -130,13 +133,12 @@
 
   .btn-outline {
     background: transparent;
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.8);
   }
 
   .btn-outline:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.5);
+     color: white;
+    
   }
 
   .btn-primary {
