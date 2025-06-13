@@ -3,7 +3,7 @@
   --primary-dark: #1d4ed8;
   --text: #1f2937;
   --text-light: #6b7280;
-  --background: #150606;
+  --background: #ffffff;
   --gray-light: #f3f4f6;
   --gray: #e5e7eb;
   --max-width: 1200px;
@@ -12,44 +12,30 @@
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
+/* Add Satoshi Variable font-face */
+@font-face {
+  font-family: 'Satoshi Variable';
+  src: url('https://cdn.fontshare.com/wf/ABCXYZ.../Satoshi-Variable.woff2') format('woff2'),
+       url('https://cdn.fontshare.com/wf/ABCXYZ.../Satoshi-Variable.woff') format('woff');
+  font-weight: 300 900;
+  font-display: swap;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
- :global(*) {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  :global(:root) {
-    --primary-orange: #FF7F3E;
-    --dark-bg: #0A0914;
-    --text-white: #ffffff;
-    --text-gray: #9ca3af;
-    --gradient: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
-  }
-
-  :global(body) {
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: var(--dark-bg);
-    color: var(--text-white);
-    min-height: 100vh;
-    margin: 0;
-  }
-
 html {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: 'Satoshi Variable';
   color: var(--text);
   scroll-behavior: smooth;
 }
 
 h1, h2, h3 {
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.2;
-  size: 48px;
 }
 
 p {
@@ -64,10 +50,8 @@ p {
   padding: 0 1.5rem;
 }
 
-
-
 .section-title {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -75,6 +59,6 @@ p {
 .section-subtitle {
   font-size: 1.25rem;
   text-align: center;
-
+  max-width: 600px;
   margin: 0 auto 3rem;
 }

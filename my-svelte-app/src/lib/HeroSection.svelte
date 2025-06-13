@@ -151,12 +151,11 @@
 
 <style>
   .hero {
-    /* Take up most of viewport but leave space for customers section */
-    height: 75vh;
-    min-height: 600px;
+    /* Full screen height for all devices */
+    height: 80vh;
+    min-height: 75vh;
     display: flex;
     align-items: center;
-    padding-top: 80px; /* Account for fixed header */
     position: relative;
     overflow: hidden;
     /* Ensure content is above background */
@@ -614,18 +613,20 @@
     }
   }
 
-  /* Responsive design */
+  /* Responsive design - Full screen on mobile */
   @media (max-width: 768px) {
     .hero {
-      height: auto;
-      min-height: 70vh;
-      padding-top: 70px;
+      height: 80vh;
+      min-height: 80vh;
+      padding: 1rem;
     }
 
     .content-wrapper {
       grid-template-columns: 1fr;
       gap: 2rem;
       text-align: center;
+      height: 100%;
+      justify-content: center;
     }
 
     .hero-content h1 {
@@ -638,6 +639,7 @@
 
     .container {
       padding: 0 1rem;
+      height: 100%;
     }
 
     .form-card {
@@ -697,6 +699,12 @@
   }
 
   @media (max-width: 480px) {
+    .hero {
+      height: 80vh;
+      min-height: 80vh;
+      padding: 0.5rem;
+    }
+
     .hero-content h1 {
       font-size: 2rem;
     }
@@ -729,6 +737,32 @@
     
     .orb-medium {
       opacity: 0.3;
+    }
+  }
+
+  /* Landscape mobile orientation */
+  @media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+      height: 800vh;
+      min-height: 100vh;
+    }
+    
+    .content-wrapper {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .hero-content h1 {
+      font-size: 1.8rem;
+    }
+    
+    .hero-content p {
+      font-size: 0.95rem;
+    }
+    
+    .form-card {
+      padding: 1.2rem;
     }
   }
 </style>

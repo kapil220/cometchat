@@ -26,18 +26,18 @@
             <img src="/cisco.png" alt="Cisco" class="logo" />
           </div>
           <div class="logo-item">
-            <img src="/tsc.png" alt="Tekno Point" class="logo" />
+            <img src="/tsc.png" alt="TSC" class="logo" />
           </div>
           <div class="logo-item">
-            <img src="/hak.png" alt="Cisco" class="logo" />
+            <img src="/hak.png" alt="HAK" class="logo" />
           </div>
         </div>
       </div>
 
-      <!-- Mobile Carousel (hidden on desktop) -->
+      <!-- Mobile Carousel (fixed) -->
       <div class="mobile-logos">
         <div class="logos-track">
-          <!-- Original Logos + Duplicates -->
+          <!-- Original Logos -->
           <div class="logo-item">
             <img src="/aws.png" alt="AWS" class="logo" />
           </div>
@@ -60,10 +60,10 @@
             <img src="/cisco.png" alt="Cisco" class="logo" />
           </div>
           <div class="logo-item">
-            <img src="/tsc.png" alt="Tekno Point" class="logo" />
+            <img src="/tsc.png" alt="TSC" class="logo" />
           </div>
           <div class="logo-item">
-            <img src="/hak.png" alt="Cisco" class="logo" />
+            <img src="/hak.png" alt="HAK" class="logo" />
           </div>
           <!-- Duplicates for seamless looping -->
           <div class="logo-item">
@@ -129,6 +129,7 @@
     opacity: 0.6;
     transition: all 0.3s ease;
     filter: grayscale(100%) brightness(0) invert(1);
+    flex-shrink: 0; /* Prevent shrinking */
   }
 
   .logo-item:hover {
@@ -144,18 +145,18 @@
     object-fit: contain;
   }
 
-  /* Mobile Carousel (NEW) */
+  /* Mobile Carousel (INFINITE LOOP - 3 VISIBLE) */
   .mobile-logos {
     display: none;
-    width: 100%; 
+    width: 100%;
     margin: 0 auto;
-    
+    overflow: hidden;
   }
 
   .logos-track {
     display: flex;
-    gap: 32px;
-    animation: scroll 20s linear infinite;
+    gap: 40px;
+    animation: infiniteScroll 15s linear infinite;
     will-change: transform;
     padding: 10px 0;
   }
@@ -187,7 +188,7 @@
 
   @media (max-width: 480px) {
     .logos-track {
-      gap: 24px;
+      gap: 30px;
     }
     
     .logo {
@@ -196,8 +197,12 @@
     }
   }
 
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-50% - 16px)); }
+  @keyframes infiniteScroll {
+    0% { 
+      transform: translateX(0); 
+    }
+    100% { 
+      transform: translateX(calc(-100% / 2));
+    }
   }
 </style>
